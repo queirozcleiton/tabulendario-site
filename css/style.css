@@ -83,7 +83,7 @@ p{margin:0 0 1em}
 }
 .header-inner{display:flex; align-items:center; gap:24px; padding-block:12px}
 .brand{display:flex; align-items:center; gap:10px; margin-right:auto}
-.brand-name{font-family:var(--font-display); font-weight:700; color:var(--navy); font-size:1.15rem}
+.brand img{height:50px; width:auto}
 .nav{display:flex; gap:28px}
 .nav a{font-weight:600; font-size:.95rem; color:var(--ink-soft); transition:color .15s}
 .nav a:hover{color:var(--orange-vivid)}
@@ -137,11 +137,18 @@ p{margin:0 0 1em}
 
 .benefits{display:grid; gap:12px; margin:22px 0 28px}
 .benefits li{
-  position:relative; padding-left:30px; color:var(--ink-soft); font-weight:500;
+  position:relative; padding-left:32px; color:var(--ink-soft); font-weight:500;
 }
 .benefits li::before{
-  content:"●"; position:absolute; left:0; top:2px; color:var(--orange-vivid); font-size:.8rem;
+  content:"⚀"; position:absolute; left:0; top:-1px;
+  font-size:1.25rem; line-height:1; color:var(--navy);
+  width:auto; height:auto; background:none;
 }
+.benefits li:nth-child(2)::before{content:"⚁"}
+.benefits li:nth-child(3)::before{content:"⚂"}
+.benefits li:nth-child(4)::before{content:"⚃"}
+.benefits li:nth-child(5)::before{content:"⚄"}
+.benefits li:nth-child(6)::before{content:"⚅"}
 
 /* =========================================================
    Trilha (Como funciona) — elemento assinatura
@@ -169,10 +176,31 @@ p{margin:0 0 1em}
 .track-step p{color:var(--ink-soft); font-size:.95rem; max-width:22ch; margin-inline:auto}
 
 /* =========================================================
-   Preços
+   Banner de preços
    ========================================================= */
-.price-banner{margin:40px auto; max-width:780px}
-.price-banner img{border-radius:var(--radius-sm); box-shadow:var(--shadow)}
+.banner-precos-wrap{margin:32px auto 28px; text-align:center}
+.banner-precos{
+  max-width:720px; width:100%; margin:0 auto;
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+
+/* =========================================================
+   Categorias (Quanto custa)
+   ========================================================= */
+.categories-grid{
+  display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
+  margin:28px 0 32px;
+}
+.category-card{
+  display:block; border-radius:var(--radius-sm); overflow:hidden;
+  box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .15s ease;
+}
+.category-card img{aspect-ratio:1/1; object-fit:cover; width:100%}
+.category-card:hover{transform:translateY(-4px); box-shadow:0 16px 34px -12px rgba(15,39,72,.35)}
+
+@media (max-width: 700px){
+  .categories-grid{grid-template-columns:1fr 1fr}
+}
 
 /* =========================================================
    CTA band
@@ -187,17 +215,21 @@ p{margin:0 0 1em}
 /* =========================================================
    Footer
    ========================================================= */
-.site-footer{background:var(--navy-deep); color:#CBD8EC; padding-top:56px}
+.site-footer{background:var(--white); color:var(--ink-soft); padding-top:56px; border-top:1px solid var(--line)}
 .footer-inner{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; padding-bottom:36px}
-.footer-brand{display:flex; flex-direction:column; gap:14px}
-.footer-brand p{color:#9FB0CC; font-size:.92rem}
-.footer-col h4{font-family:var(--font-display); color:#fff; font-size:1rem; margin-bottom:.7em}
-.footer-col a{color:#CBD8EC; transition:color .15s}
-.footer-col a:hover{color:var(--orange)}
-.fine-print{font-size:.8rem; color:#7C8FB0}
+.footer-brand{display:flex; flex-direction:column; align-items:flex-start; gap:14px}
+.footer-brand img{width:150px; height:auto}
+.footer-brand p{color:var(--ink-soft); font-size:.92rem}
+.footer-col h4{font-family:var(--font-display); color:var(--navy); font-size:1rem; margin-bottom:.7em}
+.footer-col a{color:var(--ink-soft); transition:color .15s}
+.footer-col a:hover{color:var(--orange-vivid)}
+.fine-print{font-size:.8rem; color:#8A93A6}
+
+.footer-social{display:flex; gap:14px; align-items:center; margin-top:6px}
+.footer-social img{height:36px; width:auto; border-radius:8px; display:block}
 .footer-bottom{
-  border-top:1px solid rgba(255,255,255,.1); padding:18px 24px; text-align:center;
-  font-size:.85rem; color:#7C8FB0;
+  border-top:1px solid var(--line); padding:18px 24px; text-align:center;
+  font-size:.85rem; color:#8A93A6;
 }
 
 /* =========================================================
