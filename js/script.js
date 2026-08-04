@@ -1,6 +1,13 @@
 // Ano automático no rodapé
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Meta Pixel — dispara "Contact" quando alguém clica em qualquer link de WhatsApp
+document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof fbq === 'function') fbq('track', 'Contact');
+  });
+});
+
 // Menu mobile
 const toggle = document.getElementById('navToggle');
 const nav = document.getElementById('nav');
