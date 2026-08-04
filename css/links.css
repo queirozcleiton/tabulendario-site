@@ -1,0 +1,60 @@
+/* =========================================================
+   Página de Links — usa os tokens de :root já definidos em style.css
+   ========================================================= */
+
+.links-body{
+  min-height:100vh;
+  background: radial-gradient(1100px 600px at 50% -10%, #FDEBD5 0%, var(--cream) 55%, var(--cream) 100%);
+  display:flex; align-items:flex-start; justify-content:center;
+}
+
+.links-page{
+  width:100%; max-width:420px;
+  padding:56px 24px 40px;
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center;
+}
+
+.links-logo{width:180px; height:auto; margin-bottom:6px}
+
+.links-tagline{
+  color:var(--ink-soft); font-size:.95rem; margin-bottom:36px;
+}
+
+.link-list{
+  display:flex; flex-direction:column; gap:14px; width:100%;
+}
+
+.link-btn{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  width:100%; padding:16px 20px; border-radius:16px;
+  background:#fff; box-shadow:var(--shadow);
+  font-family:var(--font-display); font-weight:600; font-size:1.02rem;
+  color:var(--navy); border:2px solid transparent;
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.link-btn:hover{transform:translateY(-2px); border-color:var(--orange)}
+
+.link-btn-primary{
+  background:var(--orange-vivid); color:#fff;
+  box-shadow:0 10px 20px -8px rgba(255,117,31,.55);
+}
+.link-btn-primary:hover{background:#e8620f; border-color:transparent}
+
+.links-social{
+  display:flex; gap:20px; margin-top:40px;
+}
+.links-social img{
+  width:46px; height:46px; border-radius:50%; box-shadow:var(--shadow);
+  transition:transform .15s ease;
+}
+.links-social a:hover img{transform:translateY(-3px)}
+
+.links-footer{
+  margin-top:32px; font-size:.8rem; color:var(--ink-soft); opacity:.75;
+}
+
+@media (max-width:420px){
+  .links-page{padding:44px 20px 32px}
+  .link-btn{padding:15px 16px; font-size:.98rem}
+}
